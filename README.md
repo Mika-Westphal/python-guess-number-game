@@ -1,2 +1,2 @@
 # python-guess-number-game
-A simple guess a number game in Python.
+Ein simples Rate die Zahl Spiel in Python
