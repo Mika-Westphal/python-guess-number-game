@@ -15,7 +15,7 @@ while not numberRange[1] or not numberRange[3]:
 
         tmpMaximumValue = input("Maximum: ")
 
-        if tmpMinimalValue.isdecimal():
+        if tmpMaximumValue.isdecimal():
             numberRange[2] = int(tmpMaximumValue)
             numberRange[3] = True
         else:
