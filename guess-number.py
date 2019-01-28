@@ -44,9 +44,9 @@ def startgame():
             if userInputValue == gameValues[0]:
                 gameValues[2] = True
             elif userInputValue < gameValues[0]:
-                print("{}Die Zahl ist Größer!".format(linesep))
+                print("{}Die Zahl ist größer!".format(linesep))
             elif userInputValue > gameValues[0]:
-                print("{}Die Zahl ist Kleiner!".format(linesep))
+                print("{}Die Zahl ist kleiner!".format(linesep))
         else:
             print("{}Bitte gebe eine Gültige Zahl ein!".format(linesep))
 
