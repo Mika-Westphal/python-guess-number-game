@@ -2,7 +2,7 @@ import random, os, sys
 
 linesep = os.linesep
 
-def execute():
+def startgame():
     print("Willkommen zum Spiel rate die Zahl!{}".format(linesep))
     print("Bitte gebe den Zahlen bereich ein in welchem du Spielen möchtest!{}".format(linesep))
 
@@ -19,11 +19,11 @@ def execute():
             print("{}Bitte gebe eine Gültige Zahl ein!{}".format(linesep, linesep))
 
     while not numberRange[3]:
-        tmpMaximumValue = input("Maximum: ")
+        tmpMaximalValue = input("Maximum: ")
 
-        if tmpMaximumValue.isdecimal():
-            if not int(tmpMaximumValue) < numberRange[0]:
-                numberRange[2] = int(tmpMaximumValue)
+        if tmpMaximalValue.isdecimal():
+            if not int(tmpMaximalValue) < numberRange[0]:
+                numberRange[2] = int(tmpMaximalValue)
                 numberRange[3] = True
             else:
                 print("{}Deine Maximale Zahl darf nicht kleiner sein als die Minimale Zahl!{}".format(linesep, linesep))
@@ -44,9 +44,9 @@ def execute():
             if userInputValue == gameValues[0]:
                 gameValues[2] = True
             elif userInputValue < gameValues[0]:
-                print("Die Zahl ist Größer!{}".format(linesep))
+                print("{}Die Zahl ist Größer!".format(linesep))
             elif userInputValue > gameValues[0]:
-                print("Die Zahl ist Kleiner!{}".format(linesep))
+                print("{}Die Zahl ist Kleiner!".format(linesep))
         else:
             print("{}Bitte gebe eine Gültige Zahl ein!".format(linesep))
 
@@ -63,13 +63,13 @@ while True:
     """)
 
     print("Hauptmenu{}".format(linesep))
-    print("1) Spiel Starten")
-    print("2) Spiel Beenden")
+    print("1) Spiel starten")
+    print("2) Spiel beenden")
     
-    eingabe = input()
-    if eingabe.isdecimal():
-        eingabe = int(eingabe)
-        if eingabe == 1:
-            execute()
-        elif eingabe == 2:
+    menupunkt = input()
+    if menupunkt.isdecimal():
+        menupunkt = int(menupunkt)
+        if menupunkt == 1:
+            startgame()
+        elif menupunkt == 2:
             sys.exit()
