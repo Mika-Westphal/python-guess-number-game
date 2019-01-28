@@ -1,6 +1,4 @@
-import random
-import os
-import sys
+import random, os, sys
 
 linesep = os.linesep
 
@@ -24,13 +22,16 @@ def execute():
         tmpMaximumValue = input("Maximum: ")
 
         if tmpMaximumValue.isdecimal():
-            numberRange[2] = int(tmpMaximumValue)
-            numberRange[3] = True
+            if not int(tmpMaximumValue) < numberRange[0]:
+                numberRange[2] = int(tmpMaximumValue)
+                numberRange[3] = True
+            else:
+                print("{}Deine Maximale Zahl darf nicht kleiner sein als die Minimale Zahl!{}".format(linesep, linesep))
         else:
             print("{}Bitte gebe eine Gültige Zahl ein!{}".format(linesep, linesep))
 
     # Hier werden die Spielinformationen gespeichert, wie z.B. die Zahl und die Versuche
-    # sowie ein Bollean wert zum beenden des Spiels
+    # sowie ein Boolean wert zum beenden des Spiels
     gameValues = [random.randint(numberRange[0], numberRange[2]), 0, False]
 
     while not gameValues[2]:
@@ -47,7 +48,7 @@ def execute():
             elif userInputValue > gameValues[0]:
                 print("Die Zahl ist Kleiner!{}".format(linesep))
         else:
-            print("Bitte gebe eine Gültige Zahl ein!")
+            print("{}Bitte gebe eine Gültige Zahl ein!".format(linesep))
 
     print("Herzlichen Glückwunsch, du hast die Zahl {} nach {} versuchen erraten!".format(gameValues[0], gameValues[1]))
     input()
