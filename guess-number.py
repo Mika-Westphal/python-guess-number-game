@@ -11,22 +11,23 @@ def execute():
     # Die Zahlen Reichweite mit dem Boolean wert ob es eine Zahl ist
     numberRange = [0, False, 0, False]
 
-    while not numberRange[1] or not numberRange[3]:
+    while not numberRange[1]:
         tmpMinimalValue = input("Minimum: ")
 
         if tmpMinimalValue.isdecimal():
             numberRange[0] = int(tmpMinimalValue)
-            numberRange[1] = True
-
-            tmpMaximumValue = input("Maximum: ")
-
-            if tmpMaximumValue.isdecimal():
-                numberRange[2] = int(tmpMaximumValue)
-                numberRange[3] = True
-            else:
-                print("Bitte gebe eine Gültige Zahl ein!{}".format(linesep))
+            numberRange[1] = True            
         else:
-            print("Bitte gebe eine Gültige Zahl ein!{}".format(linesep))
+            print("{}Bitte gebe eine Gültige Zahl ein!{}".format(linesep, linesep))
+
+    while not numberRange[3]:
+        tmpMaximumValue = input("Maximum: ")
+
+        if tmpMaximumValue.isdecimal():
+            numberRange[2] = int(tmpMaximumValue)
+            numberRange[3] = True
+        else:
+            print("{}Bitte gebe eine Gültige Zahl ein!{}".format(linesep, linesep))
 
     # Hier werden die Spielinformationen gespeichert, wie z.B. die Zahl und die Versuche
     # sowie ein Bollean wert zum beenden des Spiels
