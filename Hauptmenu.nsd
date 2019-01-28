@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;Hauptmenu&#34;" comment="" color="ffffff" type="program" style="nice">
+	<children>
+		<while text="&#34;while True&#34;" comment="" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Ausgabe: Rate die Zahl&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Ausgabe: Hauptmenu&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Ausgabe: 1) Spiel starten&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Ausgabe: 2) Spiel beenden&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Eingabe: Menuoption -&#62; menupunkt&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<alternative text="&#34;menupunkt.isdecimal&#34;" comment="" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;menupunkt = int(menupunkt)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+						<alternative text="&#34;menupunkt == 1&#34;" comment="" color="ffffff">
+							<qTrue>
+								<call text="&#34;startgame()&#34;" comment="" color="ffffff"></call>
+							</qTrue>
+							<qFalse>
+								<alternative text="&#34;menupunkt == 2&#34;" comment="" color="ffffff">
+									<qTrue>
+										<call text="&#34;sys.exit()&#34;" comment="" color="ffffff"></call>
+									</qTrue>
+									<qFalse>
+									</qFalse>
+								</alternative>
+							</qFalse>
+						</alternative>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+				<instruction text="&#34;Eingabe: Menupunt&#34;" comment="" color="ffffff" rotated="0"></instruction>
+			</qWhile>
+		</while>
+	</children>
+</root>
