@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;startgame&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;Ausgabe: Willkommen bei Rate die Zahl&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Ausgabe: Bitte gebe den Zahlen bereich ein&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;numberRange = [0, False, 0, False]&#34;" comment="&#34;numberRange[0] ist die minimale Zahl&#34;,&#34;numberRange[1] ist zum beenden der While-schleife der minimalen Zahl&#34;,&#34;numberRange[2] ist die maximale Zahl&#34;,&#34;numberRange[3] ist zum beenden der While-schleife der maximalen Zahl&#34;" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;while not numberRange[1]&#34;" comment="&#34;&#34;" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Eingabe: Minimum -&#62; tmpMinimalValue&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<alternative text="&#34;if tmpMinimalValue.isdecimal&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;numberRange[0] = int(tmpMinimalValue)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;numberRange[1] = True&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<instruction text="&#34;Ausgabe: Bitte gebe eine gültige Zahl ein&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qFalse>
+				</alternative>
+			</qWhile>
+		</while>
+		<while text="&#34;while not numberRange[3]&#34;" comment="&#34;&#34;" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Eingabe: Minimum -&#62; tmpMaximalValue&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<alternative text="&#34;if tmpMinimalValue.isdecimal&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<alternative text="&#34;if not int(tmpMaximalValue) &#60; numberRange[2]&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;numberRange[2] = int(tmpMaximalValue)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+								<instruction text="&#34;numberRange[3] = True&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+								<instruction text="&#34;Ausgabe: Die maximale zahl darf nicht kleiner sein als die minimale Zahl&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qFalse>
+						</alternative>
+					</qTrue>
+					<qFalse>
+						<instruction text="&#34;Ausgabe: Bitte gebe eine gültige Zahl ein&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qFalse>
+				</alternative>
+			</qWhile>
+		</while>
+		<instruction text="&#34;gameValues = [random.randint(numberRange[0], numberRange[3]), 0, False]&#34;" comment="&#34;gameValues[0] ist die zu erratene Zahl&#34;,&#34;gameValues[1] sind die benötigten Versuche&#34;,&#34;gameValues[2] ob die Zahl erraten wurde&#34;" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;while not gameValues[2]&#34;" comment="&#34;&#34;" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Eingabe: Zahl eingabe -&#62; userInput&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<alternative text="&#34;if userInput.isdecimal&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;gameValues[1] = gameValues[1] + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;userInputValue = int(userInput)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<alternative text="&#34;if userInputValue == gameValues[0]&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;gameValues[2] = True&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+								<alternative text="&#34;if userInputValue &#60; gameValues[0]&#34;" comment="&#34;&#34;" color="ffffff">
+									<qTrue>
+										<instruction text="&#34;Ausgabe: Die Zahl ist größer!&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+									</qTrue>
+									<qFalse>
+										<alternative text="&#34;if userInputValue &#62; gameValues[0]&#34;" comment="&#34;&#34;" color="ffffff">
+											<qTrue>
+												<instruction text="&#34;Ausgabe: Die Zahl ist größer!&#34;" comment="" color="ffffff" rotated="0"></instruction>
+											</qTrue>
+											<qFalse>
+											</qFalse>
+										</alternative>
+									</qFalse>
+								</alternative>
+							</qFalse>
+						</alternative>
+					</qTrue>
+					<qFalse>
+						<instruction text="&#34;Ausgabe: Bitte gebe eine gültige Zahl ein&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qFalse>
+				</alternative>
+			</qWhile>
+		</while>
+		<instruction text="&#34;Ausgabe: Herzlichen Glückwunsch, du hast die Zahl {gameValues[0]} nach {gameValues[1]} Versuchen gefunden&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Eingabe&#34;" comment="&#34;Dient nur dazu auf den Benutzer zu warten, bis dieser bestätigt&#34;" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>
