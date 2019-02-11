@@ -2,16 +2,15 @@ import random, os, sys
 
 linesep = os.linesep
 
-def numberinput(usermessage: str, errormessage: str, whileone: bool):
+def numberinput(usermessage: str, errormessage: str, oneexec: bool):
     exitWhile = False
     while not exitWhile:        
         userinput = str(input(usermessage))
-        isinputdecimal = bool(userinput.isdecimal())
-        if isinputdecimal:
+        if userinput.isdecimal():
             return int(userinput)
         else:
             print(errormessage)
-            if whileone:
+            if oneexec:
                 exitWhile = True
 
 def getrange(numberone: int, numbertwo: int):

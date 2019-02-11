@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="https://structorizer.fisch.lu" version="3.29-02" preRepeat="until " postFor="to" preReturn="return" postForIn="in" preWhile="while " output="OUTPUT" input="INPUT" preFor="for" preExit="exit" preLeave="leave" ignoreCase="true" preForIn="foreach" stepFor="by" author="igamblenull" created="2019-02-11" changedby="igamblenull" changed="2019-02-11" origin="Structorizer 3.29-02" text="&#34;game&#34;" comment="" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;Ausgabe: Willkommen zum Spiel rate die Zahl!&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;Ausgabe: Bitte gebe den Zahlen bereich ein in welchem du Spielen möchtest!&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<call text="&#34;rangeNumber1 = numberinput(&#34;&#34;Minimum: &#34;&#34;, &#34;&#34;Bitte gebe eine Gültige Zahl ein!&#34;&#34;, False)&#34;" comment="&#34;&#34;" color="ffffff" disabled="0"></call>
+		<call text="&#34;rangeNumber1 = numberinput(&#34;&#34;Maximum: &#34;&#34;, &#34;&#34;Bitte gebe eine Gültige Zahl ein!&#34;&#34;, False)&#34;" comment="&#34;&#34;" color="ffffff" disabled="0"></call>
+		<call text="&#34;numberRange = getrange(rangeNumber1, rangeNumber2)&#34;" comment="&#34;&#34;" color="ffffff" disabled="0"></call>
+		<instruction text="&#34;gameValues = [random.randint(numberRange[0], numberRange[1]), 0, False]&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+		<while text="&#34;while not gameValues[2]&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+			<qWhile>
+				<call text="&#34;userInput = numberinput(&#34;&#34;{}Bitte gebe deine Zahl ein: &#34;&#34;.format(linesep), &#34;&#34;{}Bitte gebe eine Gültige Zahl ein!&#34;&#34;.format(linesep), False)&#34;" comment="&#34;&#34;" color="ffffff" disabled="0"></call>
+				<instruction text="&#34;gameValues[1] = gameValues[1] + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+				<alternative text="&#34;userInput == gameValues[0]&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+					<qTrue>
+						<instruction text="&#34;gameValues[2] = True&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<alternative text="&#34;userInput &#60; gameValues[0]&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+							<qTrue>
+								<instruction text="&#34;Ausgabe: Die Zahl ist größer!&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+							</qTrue>
+							<qFalse>
+								<alternative text="&#34;userInput &#62; gameValues[0]&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+									<qTrue>
+										<instruction text="&#34;Ausgabe: Die Zahl ist kleiner!&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+									</qTrue>
+									<qFalse color="ffffff">
+									</qFalse>
+								</alternative>
+							</qFalse>
+						</alternative>
+					</qFalse>
+				</alternative>
+			</qWhile>
+		</while>
+		<instruction text="&#34;Ausgabe: Herzlichen Glückwunsch, du hast die Zahl {} nach {} versuchen erraten!&#34;" comment="&#34;{} wird nachher mit .format ausgetauscht&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+	</children>
+</root>
